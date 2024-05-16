@@ -1,0 +1,33 @@
+:root {
+  --black: #0f0d13;
+  --white: #e1e1e6;
+  --gray: #d9d9d9;
+  --purple: #2a2141;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--black);
+  color: var(--white);
+  -webkit-font-smoothing: antialiased;
+}
+
+body,
+input,
+textarea,
+button {
+  font: 400 1rem 'Roboto', sans-serif;
+  line-height: 1;
+}
+
+button {
+  background: inherit;
+  border: none;
+  cursor: pointer;
+  color: inherit;
+}

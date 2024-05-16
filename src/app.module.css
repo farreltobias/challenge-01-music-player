@@ -1,0 +1,23 @@
+.main {
+  height: 100vh;
+
+  display: grid;
+  grid-template-areas:
+    'ply1 ply2'
+    'ply1 ply3';
+
+  align-content: center;
+  justify-content: center;
+
+  gap: 2rem;
+}
+
+.main :nth-child(1) {
+  grid-area: ply1;
+}
+.main :nth-child(2) {
+  grid-area: ply2;
+}
+.main :nth-child(3) {
+  grid-area: ply3;
+}
