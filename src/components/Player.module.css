@@ -25,6 +25,8 @@
   justify-content: center;
   flex-direction: column;
 
+  width: 14rem;
+
   gap: 1.8rem;
 }
 
@@ -36,26 +38,33 @@
   gap: 1.8rem;
 }
 
-.player.default > header img {
-  width: 12rem;
-  height: 12rem;
+.player > header img {
+  object-fit: cover;
   border-radius: 0.5rem;
 }
 
 .player.small > header img {
   width: 5rem;
-  height: 5rem;
-  border-radius: 0.5rem;
 }
 
 .player > header div {
   display: flex;
   flex-direction: column;
   gap: 0.6rem;
+
+  width: 14rem;
 }
 
 .player > header h1 {
   font-size: 1.5rem;
+  max-width: 100%;
+
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .player > header p {
