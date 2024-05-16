@@ -1,4 +1,4 @@
-.main {
+.wrapper {
   height: 100vh;
 
   display: grid;
@@ -12,12 +12,28 @@
   gap: 2rem;
 }
 
-.main :nth-child(1) {
+.wrapper > :nth-child(1) {
   grid-area: ply1;
+  margin: auto;
 }
-.main :nth-child(2) {
+.wrapper > :nth-child(2) {
   grid-area: ply2;
+  margin: auto;
 }
-.main :nth-child(3) {
+.wrapper > :nth-child(3) {
   grid-area: ply3;
+  margin: auto;
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 80%;
+  }
+
+  .wrapper {
+    grid-template-areas:
+      'ply1'
+      'ply2'
+      'ply3';
+  }
 }

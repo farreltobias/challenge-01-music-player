@@ -3,7 +3,7 @@ import { Player } from './components/Player'
 
 export const App: React.FC = () => {
   return (
-    <main className={styles.main}>
+    <main className={styles.wrapper}>
       <Player />
       <Player variant="small" />
       <Player variant="small" noTimer />
