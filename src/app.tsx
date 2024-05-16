@@ -3,6 +3,9 @@ import { Player } from './components/Player'
 import { createRef, useEffect, useState } from 'react'
 import { useMetadata } from './hooks/useMetadata'
 
+import musicFile from './assets/Down South - Jeremy Loops.mp3'
+import { DownloadSimple, MusicNote } from '@phosphor-icons/react'
+
 export const App: React.FC = () => {
   const [source, setSource] = useState<File | null>(null)
   const ref = createRef<HTMLAudioElement>()
@@ -26,11 +29,32 @@ export const App: React.FC = () => {
 
   return (
     <main className={styles.wrapper}>
+      <label className={styles.file}>
+        <MusicNote size={32} weight="regular" />
+        Upload your music
+        <input type="file" accept="audio/*" onChange={onFileChange} />
+      </label>
+
+      <a
+        className={styles.download}
+        href={musicFile}
+        download
+        title="Download sample"
+      >
+        <DownloadSimple />
+        <div>
+          <MusicNote size={32} weight="regular" />
+          <div>
+            <strong>Down South</strong>
+            <span>Jeremy Loops</span>
+          </div>
+        </div>
+      </a>
+
       <Player audioRef={ref} metadata={metadata} />
       <Player audioRef={ref} metadata={metadata} variant="small" />
       <Player audioRef={ref} metadata={metadata} variant="small" noTimer />
 
-      <input type="file" accept="audio/*" onChange={onFileChange} />
       <audio ref={ref} loop autoPlay />
     </main>
   )

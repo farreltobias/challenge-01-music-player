@@ -69,7 +69,7 @@
 
 .player > header p {
   font-size: 1.25rem;
-  opacity: 70%;
+  opacity: 0.7;
 }
 
 .player > footer {
@@ -114,7 +114,7 @@
   background-color: var(--gray);
   border-radius: 0.2rem;
 
-  opacity: 20%;
+  opacity: 0.2;
 }
 
 .player > footer .slider div:last-child {
@@ -132,5 +132,5 @@
   display: flex;
   justify-content: space-between;
 
-  opacity: 70%;
+  opacity: 0.7;
 }
