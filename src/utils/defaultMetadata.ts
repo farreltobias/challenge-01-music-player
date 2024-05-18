@@ -1,4 +1,4 @@
-import albumDefault from '../assets/album.png'
+import albumDefault from '/album.png'
 
 export type MusicMetadata = {
   title: string
