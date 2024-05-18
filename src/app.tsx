@@ -32,7 +32,7 @@ export const App: React.FC = () => {
       <label className={styles.file}>
         <MusicNote size={32} weight="regular" />
         Upload your music
-        <input type="file" accept="audio/*" onChange={onFileChange} />
+        <input type="file" accept=".mp3,audio/*" onChange={onFileChange} />
       </label>
 
       <a
