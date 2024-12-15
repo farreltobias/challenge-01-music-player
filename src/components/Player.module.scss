@@ -1,0 +1,254 @@
+.player {
+  background-color: var(--purple);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  border-radius: calc(0.75rem);
+
+  max-width: fit-content;
+  height: 100%;
+}
+
+.player.default {
+  padding: 2.4rem;
+}
+
+.player.small {
+  padding: 1.8rem;
+}
+
+.player.default > header {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  width: 14rem;
+
+  gap: 1.8rem;
+}
+
+.player.small > header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 1.8rem;
+}
+
+.player > header img {
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
+
+.player.small > header img {
+  width: 5rem;
+}
+
+.player > header div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+
+  width: 14rem;
+}
+
+.player > header h1 {
+  font-size: 1.5rem;
+  max-width: 100%;
+
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.player > header p {
+  font-size: 1.25rem;
+  opacity: 0.7;
+}
+
+.player > footer {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+
+  gap: 3.125rem;
+
+  margin-top: 1.8rem;
+}
+
+.player > footer.timer {
+  display: flex;
+  flex-direction: column;
+
+  gap: 0.6rem;
+
+  margin-top: 1.8rem;
+}
+
+.player > footer.timerHidden {
+  max-height: 0;
+  visibility: hidden;
+}
+
+.player > footer .slider {
+  width: 100%;
+  /* height: 0.4rem; */
+  position: relative;
+}
+
+.player > footer .slider div:first-child {
+  height: 100%;
+
+  background-color: var(--gray);
+  border-radius: 0.2rem;
+
+  opacity: 0.2;
+}
+
+.player > footer .slider div:last-child {
+  display: none;
+
+  position: absolute;
+  top: 0;
+
+  height: 100%;
+
+  background-color: var(--gray);
+  border-radius: 0.2rem;
+}
+
+.player > footer .times {
+  display: flex;
+  justify-content: space-between;
+
+  opacity: 0.7;
+}
+
+/********** Range Input Styles **********/
+/* @import 'bourbon'; */
+
+$slider-width-number: 240;
+$slider-width: #{$slider-width-number}px;
+$slider-height: 0.4rem;
+$thumb-width: 18px;
+$thumb-height: 18px;
+$thumb-radius: 8px;
+$thumb-background: #fff;
+$thumb-border: none;
+$shadow-size: -8px;
+$fit-thumb-in-slider: -8px;
+
+@function makelongshadow($color, $size) {
+  $val: 5px 0 0 $size $color;
+
+  @for $i from 6 through $slider-width-number {
+    $val: #{$val}, #{$i}px 0 0 $size #{$color};
+  }
+
+  @return $val;
+}
+
+input[type='range'] {
+  align-items: center;
+  appearance: none;
+  background: none;
+  cursor: pointer;
+  display: flex;
+  height: 100%;
+  min-height: 50px;
+  overflow: hidden;
+  width: $slider-width;
+
+  &:focus {
+    box-shadow: none;
+    outline: none;
+  }
+
+  &::-webkit-slider-runnable-track {
+    background: var(--gray);
+    content: '';
+    height: $slider-height;
+    pointer-events: none;
+  }
+
+  &::-webkit-slider-thumb {
+    width: $thumb-width;
+    height: $thumb-height;
+
+    appearance: none;
+    background: $thumb-background;
+    border-radius: $thumb-radius;
+    box-shadow: makelongshadow(#5F5867, $shadow-size);
+    margin-top: $fit-thumb-in-slider;
+    border: $thumb-border;
+  }
+
+  &::-moz-range-track {
+    width: $slider-width;
+    height: $slider-height;
+  }
+
+  &::-moz-range-thumb {
+    width: $thumb-width;
+    height: $thumb-height;
+
+    background: $thumb-background;
+    border-radius: $thumb-radius;
+    border: $thumb-border;
+    position: relative;
+  }
+
+  &::-moz-range-progress {
+    height: $slider-height;
+    background: var(--gray);
+    border: 0;
+    margin-top: 0;
+  }
+
+  &::-ms-track {
+    background: transparent;
+    border: 0;
+    border-color: transparent;
+    border-radius: 0;
+    border-width: 0;
+    color: transparent;
+    height: $slider-height;
+    margin-top: 10px;
+    width: $slider-width;
+  }
+
+  &::-ms-thumb {
+    width: $thumb-width;
+    height: $thumb-height;
+
+    background: $thumb-background;
+    border-radius: $thumb-radius;
+    border: $thumb-border;
+  }
+
+  &::-ms-fill-lower {
+    background: var(--gray);
+    border-radius: 0;
+  }
+
+  &::-ms-fill-upper {
+    background: #5F5867;
+    border-radius: 0;
+  }
+
+  &::-ms-tooltip {
+    display: none;
+  }
+}
